@@ -1,0 +1,24 @@
+.clock-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.time {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.countdown {
+  font-size: 18px;
+  color: #666;
+}
