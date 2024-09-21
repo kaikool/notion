@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
+    <title>Countdown Timers</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             background-color: #f0f0f0;
         }
@@ -18,6 +19,7 @@
             font-size: 2em;
             background: #fff;
             padding: 20px;
+            margin: 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -28,13 +30,14 @@
 </head>
 <body>
     <div class="countdown">
-        <div id="timer">1 days : 02 hours : 07 min : 26 sec</div>
+        <div id="tokyo-timer">Tokyo: 1 days : 02 hours : 07 min : 26 sec</div>
+        <div id="london-timer">London: 1 days : 02 hours : 07 min : 26 sec</div>
+        <div id="newyork-timer">New York: 1 days : 02 hours : 07 min : 26 sec</div>
     </div>
 
     <script>
-        function countdown() {
-            const targetDate = new Date("Sep 22, 2024 09:00:00").getTime(); // Thời gian bắt đầu phiên giao dịch Tokyo
-            const timer = document.getElementById("timer");
+        function countdown(targetDate, elementId) {
+            const timer = document.getElementById(elementId);
 
             const interval = setInterval(() => {
                 const now = new Date().getTime();
@@ -54,7 +57,13 @@
             }, 1000);
         }
 
-        countdown();
+        const tokyoTime = new Date("Sep 22, 2024 09:00:00 GMT+7").getTime();
+        const londonTime = new Date("Sep 22, 2024 15:00:00 GMT+7").getTime();
+        const newYorkTime = new Date("Sep 22, 2024 20:00:00 GMT+7").getTime();
+
+        countdown(tokyoTime, "tokyo-timer");
+        countdown(londonTime, "london-timer");
+        countdown(newYorkTime, "newyork-timer");
     </script>
 </body>
 </html>
